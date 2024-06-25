@@ -27,7 +27,10 @@ class Database:
         return self.complaints
 
     def get_complaint(self, _id: str = None):
-        return filter(lambda x: x['_id'] == _id, self.complaints)
+        result = list(filter(lambda x: x['id'] == _id, self.complaints))
+        if len(result) > 0:
+            return result[0]
+        return None
     
     def update_complaint(self):
         pass
@@ -39,6 +42,9 @@ class Database:
         return self.users
 
     def get_user(self, _id: str = None):
-        return filter(lambda x: x['_id'] == _id, self.users)
+        result = list(filter(lambda x: x['id'] == _id, self.users))
+        if len(result) > 0:
+            return result[0]
+        return None
     
 client = Database()

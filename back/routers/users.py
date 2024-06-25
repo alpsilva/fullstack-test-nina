@@ -1,6 +1,6 @@
 from http import HTTPStatus
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 from back.database.database import client
 from back.schemas.users import UserSchema, UserList
@@ -15,4 +15,6 @@ def get_users():
 @router.get('/{user_id}', response_model=UserSchema)
 def get_user(user_id: str):
     user = client.get_user(user_id)
+    if user is None:
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="User not found.")
     return user

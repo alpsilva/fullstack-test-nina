@@ -1,6 +1,6 @@
 from http import HTTPStatus
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 from back.database.database import client
 from back.schemas.complaints import ComplaintSchema, ComplaintList
@@ -15,4 +15,7 @@ def get_complaints():
 @router.get('/{complaint_id}', response_model=ComplaintSchema)
 def get_complaint(complaint_id: str):
     complaint = client.get_complaint(complaint_id)
+    if complaint is None:
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Complaint not found.")
+
     return complaint
