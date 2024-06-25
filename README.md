@@ -3,7 +3,7 @@ Template repository for fullstack web developers at Super NINA.
 
 # Backend
 ## Requirements
-Python 3.11+
+- Python 3.11+
 
 ## Installing dependencies
 From the root of the project, run:
@@ -15,4 +15,20 @@ pip install -r back/requirements.txt
 From the root of the project, run:
 ```sh
 fastapi dev back/app.py
+```
+
+# Frontend
+## Requirements
+-
+
+## Installing dependencies
+From the root of the project, run:
+```sh
+
+```
+
+## Running frontend
+From the root of the project, run:
+```sh
+
 ```
