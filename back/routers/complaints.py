@@ -19,3 +19,7 @@ def get_complaint(complaint_id: str):
         raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Complaint not found.")
 
     return complaint
+
+# @router.get('/user/{user_id}', response_model=ComplaintList)
+# def get_complaints_from_user(user_id: str):
+#     # Implement your function here!
