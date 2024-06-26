@@ -2,6 +2,10 @@
 Template repository for fullstack web developers at Super NINA.
 
 # Challenge
+**Remember to create a new repository with this one as the template. This can be achieved with the button "Use this template", at the top right corner of this repo's github page!**
+
+**Don't clone or fork this repository, as this method could expose your submission to other candidates and allow your hard work to be copied.**
+
 As part of the selection process, we would like you to:
 
 1. [Backend] Implement a missing feature that returns all the complaints from a given user. This will measure your ability in developing new features in an on-going project.
