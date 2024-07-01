@@ -5,7 +5,9 @@ class ComplaintSchema(BaseModel):
     id: str
     user_id: str
     date: datetime
-    type: list[str]
+    at_moment: bool
+    type: str
+    neighborhood: str
     description: str
     created_at: datetime
     updated_at: datetime

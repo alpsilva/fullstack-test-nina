@@ -5,7 +5,7 @@ from http import HTTPStatus
 app = FastAPI()
 
 app.include_router(users.router)
-app.include_router(complaints)
+app.include_router(complaints.router)
 
 @app.get('/', status_code=HTTPStatus.OK)  
 def read_root():  

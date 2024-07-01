@@ -18,6 +18,19 @@ TYPES = [
     "FLASHING",
 ]
 
+NEIGHBORHOODS = [
+    "Taquacara",
+    "Sé",
+    "República",
+    "Liberdade",
+    "Braz",
+    "Boa Vista",
+    "Madalena",
+    "Boa Viagem",
+    "Água Fria",
+    "Aflitos",
+]
+
 def random_from_list(l: list):
     index = random.randint(0, len(l)-1)
     return l[index]
@@ -61,7 +74,9 @@ def generate_new_complaint(complaint_num: int, user_id: str):
         'id': str(bson.ObjectId()),
         'user_id': user_id,
         'date': random_datetime(START_DATE, END_DATE),
-        'type': [random_from_list(TYPES), random_from_list(TYPES)],
+        'at_moment': random_from_list([True, False]),
+        'type': random_from_list(TYPES),
+        'neighborhood': random_from_list(NEIGHBORHOODS),
         'description': f"This is as description of the report #{complaint_num} for the user {user_id}.",
         'created_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
         'updated_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
@@ -73,13 +88,13 @@ complaints = []
 for n in range(user_number):
     new_user = generate_new_user(n)
     users.append(new_user)
-    print(f"Appended user {new_user['_id']}.")
+    print(f"Appended user {new_user['id']}.")
     sleep(3)
     
     for c in range (complaint_per_user):
-        new_complaint = generate_new_complaint(c, new_user['_id'])
+        new_complaint = generate_new_complaint(c, new_user['id'])
         complaints.append(new_complaint)
-        print(f"Appended complaint {new_complaint['_id']}.")
+        print(f"Appended complaint {new_complaint['id']}.")
         sleep(1)
     
 # Store data

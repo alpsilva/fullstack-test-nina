@@ -9,7 +9,7 @@ router = APIRouter(prefix='/complaints', tags=['complaints'])
 def get_complaints():
     complaints = client.get_complaints()
     complaints.sort(key=lambda x: x['id'])
-    return {'complaints': []}
+    return {'complaints': complaints}
 
 @router.get('/{complaint_id}', response_model=ComplaintSchema)
 def get_complaint(complaint_id: str):
