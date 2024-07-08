@@ -11,6 +11,30 @@ def get_complaints():
     complaints.sort(key=lambda x: x['id'])
     return {'complaints': complaints}
 
+@router.get('/group/types')
+def get_complaints_group_by_types():
+    return {'types': client.group_by('type')}
+
+@router.get('/group/genders')
+def get_complaints_group_by_genders():
+    return {'genders': client.group_by('gender')}
+
+@router.get('/group/age_group')
+def get_complaints_group_by_age_group():
+    pass
+
+@router.get('/group/moment')
+def get_complaints_group_by_moment():
+    return {'at_moment': client.group_by('at_moment')}
+
+@router.get('/group/months')
+def get_complaints_group_by_months():
+    pass
+
+@router.get('/group/neighborhoods')
+def get_complaints_group_by_neighborhoods():
+    return {'neighborhoods': client.group_by('neighborhood')}
+
 @router.get('/{complaint_id}', response_model=ComplaintSchema)
 def get_complaint(complaint_id: str):
     complaint = client.get_complaint(complaint_id)
