@@ -123,8 +123,9 @@ class Database:
         complaints = self.get_complaints()
         for complaint in complaints:
             date = datetime.strptime(complaint['date'], DATE_FORMAT)
-            _, month, _ = self._get_date_elements(date) 
-            self._increment_count(grouped_data, month)
+            _, month, _ = self._get_date_elements(date)
+            month_name = self._translate_month_int_to_name(month)
+            self._increment_count(grouped_data, month_name)
 
         return grouped_data
     
