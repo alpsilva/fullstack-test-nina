@@ -78,6 +78,7 @@ def generate_new_complaint(complaint_num: int, user_id: str):
         'type': random_from_list(TYPES),
         'neighborhood': random_from_list(NEIGHBORHOODS),
         'description': f"This is as description of the report #{complaint_num} for the user {user_id}.",
+        'situation': random_from_list(['VICTIM', 'WITNESS']),
         'created_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
         'updated_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
     }

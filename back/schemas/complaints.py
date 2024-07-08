@@ -8,6 +8,7 @@ class ComplaintSchema(BaseModel):
     at_moment: bool
     type: str
     neighborhood: str
+    situation: str
     description: str
     created_at: datetime
     updated_at: datetime
@@ -22,6 +23,7 @@ class ComplaintUserSchema(BaseModel):
     at_moment: bool
     type: str
     neighborhood: str
+    situation: str
     description: str
     created_at: datetime
     updated_at: datetime
