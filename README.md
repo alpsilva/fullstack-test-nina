@@ -15,6 +15,8 @@ As part of the selection process, we would like you to:
 5. [Frontend] Follow the design provided by our designer. This will allow us to measure how well you work with a designer on the team.
 6. [Frontend] Implement routing for the 3 pages needed for Angular Application.
 
+**Helpful tip! After starting the backend server, be sure to check the API's documentation at ``` http://127.0.0.1:8000/docs ```**
+
 Your submission will be tested using:
 - Python 3.11
 - Node 18.19
