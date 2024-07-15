@@ -5,8 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-app.include_router(users.router)
-app.include_router(complaints.router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,6 +12,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(users.router)
+app.include_router(complaints.router)
 
 @app.get('/', status_code=HTTPStatus.OK)  
 def read_root():  
