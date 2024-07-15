@@ -11,16 +11,17 @@ As part of the selection process, we would like you to:
 1. [Backend] Implement a missing feature that returns all the complaints from a given user. This will measure your ability in developing new features in an on-going project. This won't be used in the frontend, the route just needs to exist.
 2. [Backend] Implement a filtering functionality to the get_complaints route (```/complaints```) allowing it to return only the complaints where the field ```date``` is in between the fields ```from_date``` and ```to_date```, passed through query parameters. This will be necessary for integration with the complaints table in the frontend and will measure your ability to develop and maintain FastAPI routes with parameters.
 3. [Backend] Refactor the get_complaint route (```/complaint/{complaint_id}```) so that the returned complaint includes information about the user who registered it. This will be necessary for frontend integration and will measure your ability to develop and maintain python functions and FastAPI routes.
-4. [Frontend] Build a small Angular application that makes a REST API call to a provided endpoint. This will allow us to evaluate your understanding of Angular, HTTP requests, and working with external APIs.
-5. [Frontend] Follow the design provided by our designer. This will allow us to measure how well you work with a designer on the team.
-6. [Frontend] Implement routing for the 3 pages needed for Angular Application.
+
+5. [Frontend] Build a small Angular application following the [design](https://www.figma.com/design/oosvhfSMv6OsCDCW27NWQ0/Processo-seletivo---2024?node-id=0-1&t=qbuEQHZKt86TTp7j-1) provided by our designer. This will allow us to evaluate your understanding of Angular and measure how well you work with a designer on the team.
+4. [Frontend] The application should be able to make a REST API call to the provided backend endpoints and integrate the data with the UI. This will allow us to evaluate your understanding of HTTP requests, and working with external APIs.
+6. [Frontend] Implement routing for the 2 pages needed for the Angular Application.
 
 **Helpful tip! After starting the backend server, be sure to check the API's documentation at ``` http://127.0.0.1:8000/docs ```**
 
 Your submission will be tested using:
 - Python 3.11
 - Node 18.19
-- Angular CLI 17.3
+- Angular CLI 18.1
 
 <!-- - Connect to a web socket and display real time notifications as pop-ups. This will allow us to evaluate your understandings of websockets and data streaming. -->
 
